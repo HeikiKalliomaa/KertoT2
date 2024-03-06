@@ -63,7 +63,5 @@ input_kentta('password',type:"password",required:$required['password']);
 </div>
 
 </div>
-<?php
-include "footer.html";
-?>
+
 
