@@ -1,4 +1,5 @@
 <?php
+if (!session_id()) session_start();
 $display = "d-none";
 $message = "";
 $success = "success";
@@ -72,7 +73,7 @@ if (isset($_POST['button'])) {
             $_SESSION["email"] = $email;
             debuggeri("ID on : " . $_SESSION["userid"] . " ja email on : " . $_SESSION["email"]) ;   
             if ($is_active){
-               if (!session_id()) session_start();
+
                $_SESSION["loggedIn"] = $role;
                debuggeri("Session mumero L77: ".session_id() . ',LoggedIn:' . $_SESSION["loggedIn"] . ',rememberme:  ' . $rememberme);
                if ($rememberme) rememberme($id);
