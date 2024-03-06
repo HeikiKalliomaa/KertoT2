@@ -85,7 +85,6 @@ document.querySelector('.buttons').onclick = (event) => {
             //         // Handle the response from results_handling.php if needed
                 })
                  .catch(error => {
-                    console.log('Error:', error);
                     console.error('Error:', error);
             //        Handle the error if needed
                 });

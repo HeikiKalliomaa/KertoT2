@@ -2,7 +2,7 @@
 define('DEBUG',true);
 error_reporting(E_ALL);
 $PALVELIN = $_SERVER['HTTP_HOST'];
-$PALVELU = "/projektit/kertot/code/";
+$PALVELU = "/projektit/kertot/";
 $LINKKI_RESETPASSWORD = "resetpassword.php";
 $LINKKI_VERIFICATION = "verification.php";
 $PALVELUOSOITE = "asiakaspalvelu@kertot.fi";
