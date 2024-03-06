@@ -74,7 +74,7 @@ if (isset($_POST['button'])) {
             if ($is_active){
                if (!session_id()) session_start();
                $_SESSION["loggedIn"] = $role;
-               debuggeri("Session mumero L77: ".session_id() . ',LoggedIn:  ' . $_SESSION["loggedIn"] . ',rememberme :  ' . $rememberme);
+               debuggeri("Session mumero L77: ".session_id() . ',LoggedIn:' . $_SESSION["loggedIn"] . ',rememberme:  ' . $rememberme);
                if ($rememberme) rememberme($id);
                if (isset($_SESSION['next_page'])){
                   $location = $_SESSION['next_page'];
