@@ -11,9 +11,9 @@
 $title = "Login";
 $lomakekentat = ['email', 'password','rememberme'];
 $pakolliset = ['email', 'password'];
+include 'header.php';
 include 'asetukset.php';
 include 'db.php';
-include 'header.php';
 include 'lomakerutiinit.php';
 // include 'rememberme.php';
 include 'kirjautuminen.php';

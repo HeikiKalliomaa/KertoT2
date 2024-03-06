@@ -1,6 +1,6 @@
 <?php
-include "debuggeri_simple.php";
 if (!session_id()) session_start();
+include "debuggeri_simple.php";
 /* Huom. suojatulla sivulla on asetukset,db,rememberme.php; */
 if (!isset($loggedIn)){
   //include "db.php";
