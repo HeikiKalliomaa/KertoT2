@@ -1,8 +1,8 @@
 <?php 
+if (!session_id()) session_start();
 include "asetukset.php";
 include "db.php";
 include "rememberme.php";
-if (!session_id()) session_start();
 $loggedIn = secure_page();
 $title = 'Profiili';
 $css = 'profiili.css';
