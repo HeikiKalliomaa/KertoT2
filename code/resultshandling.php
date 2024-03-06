@@ -1,5 +1,5 @@
 <?php
-// include_once("asetukset.php");
+include_once("asetukset.php");
 include "debuggeri_simple.php";
 include ("db.php");
 debuggeri("L5 Session id in resultshandling.php: " . session_id());
@@ -17,17 +17,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $correct = $_POST['right'];
         
         debuggeri("Tarkistus resulthandling line 16: points: $points, user_id: $user_id, time_used: $time_used, correct: $correct");
-        
+        debuggeri("Tarkistus onko tietokanta valittu: " . $DB);
         $query = "INSERT INTO results (points, users_id, usedtime, correct) VALUES ($points, $user_id, $time_used, $correct)";
         debuggeri("Tarkistus resulthandling line 22: query " . $query);
-        $result = query_oma($yhteys, $query);
+        $result = query_oma($yhteys,$query);
         debuggeri("Tarkistus resulthandling line 24: result " . $result);
         if ($result) {
-            echo "Tallennus onnistui";
+            echo "success"; // Send success message back to JavaScript
             debuggeri("Tallennus onnistui");
-        }
-        else {
-            echo "Tallennus epäonnistui";
+        } else {
+            echo "failure"; // Send failure message back to JavaScript
             debuggeri("Tallennus epäonnistui");
         }
     }

@@ -1,5 +1,6 @@
 <?php
 include "header.php";
+if (!isset($_SESSION["userid"]));
 ?>
 
 <!DOCTYPE html>
