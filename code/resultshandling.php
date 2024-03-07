@@ -1,11 +1,8 @@
 <?php
+if (!session_id()) session_start();
 include_once("asetukset.php");
 include "debuggeri_simple.php";
 include ("db.php");
-debuggeri("L5 Session id in resultshandling.php: " . session_id());
-debuggeri("L6 Session userid in resultshandling.php: {$_SESSION['userid']}");
-debuggeri("L7email in resultshandling.php: {$_SESSION['email']}");
-if (!session_id()) session_start();
 debuggeri("L9 Session id in results handling: " . session_id());
 debuggeri("l10 Session userid in results handling: {$_SESSION['userid']}");
 debuggeri("L11email in results handling: {$_SESSION['email']}");
