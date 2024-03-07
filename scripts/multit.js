@@ -70,24 +70,25 @@ document.querySelector('.buttons').onclick = (event) => {
             out3.innerHTML += "<br>Points: " + points;
 
             // Transfer results to resultshandling.php
-            const formData = new FormData();
-            formData.append('points', points);
-            formData.append('timeUsed', timeUsed);
-            formData.append('right', right);
-   
-            fetch('resultshandling.php', {
-                method: 'POST',
-                body: formData
-            })
-                .then(response => response.text())
-                .then(data => {
-                    console.log(data);
-            //         // Handle the response from results_handling.php if needed
+                if ((user_a > 0) && (!user_a !== "") && (!user_a !== null)){
+                const formData = new FormData();
+                formData.append('points', points);
+                formData.append('timeUsed', timeUsed);
+                formData.append('right', right);
+    
+                fetch('resultshandling.php', {
+                    method: 'POST',
+                    body: formData
                 })
-                 .catch(error => {
-                    console.error('Error:', error);
-            //        Handle the error if needed
-                });
+                    .then(response => response.text())
+                    .then(data => {
+                        console.log(data);
+                //         // Handle the response from results_handling.php if needed
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                //        Handle the error if needed
+                    })};
             right = 0;
             wrong = 0;
         }
@@ -106,8 +107,27 @@ document.querySelector('.results-buttons').onclick = (e) => {
         out1.textContent = a + ' x ' + b + ' = ';
         timeStart = new Date();
     }   else if (butn.includes(actionKey) && actionKey === 'Ranking') {
-        alert("This option is available only for registered users.");
-        console.log("Ranking");
+        console.log(user_a);
+            if (user_a > 0) {
+                window.location.href = "results.php"
+                // const formData2 = new FormData();
+                // formData2.append('usera', 'usera');
+                // fetch('resultsscreen.php', {
+                //     method: 'POST',
+                //     body: formData2
+                // })
+                // .then(response => response.text())
+                // .then(data => {
+                //     console.log(data);
+                //     // Handle the response from results_handling.php if needed
+                //     window.location.href = "resultsscreen.php";
+                // })
+                // .catch(error => {
+                //     console.error('Error:', error);
+                //     // Handle the error if needed
+                // });
+            } else alert("This option is available only for registered users.");
+
     }   else if (butn.includes(actionKey) && actionKey === 'Exit') {
         console.log("Exit");
         window.location.href = "../index.php";

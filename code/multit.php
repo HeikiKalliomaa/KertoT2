@@ -1,6 +1,12 @@
 <?php
+if (!session_id()) session_start();
+// include "debuggeri_simple.php";
 include "header.php";
-if (!isset($_SESSION["userid"]));
+include_once("asetukset.php");
+include "db.php";
+
+
+$user_a = $_SESSION['userid'];
 ?>
 
 <!DOCTYPE html>
@@ -48,8 +54,31 @@ if (!isset($_SESSION["userid"]));
                 <div class="butn exit">Exit</div>
             </div>    
         </div> 
-    </div>   
+    </div> 
+    <?php
+// if (($_SERVER['REQUEST_METHOD'] == 'POST') && ($_POST['usera']==='usera')) {
+//     $queri = "SELECT results.points, users.firstname, users.lastname
+//     FROM results
+//     INNER JOIN users ON results.users_id = users.id
+//     ORDER BY results.points DESC";
+//     $result = query_oma($yhteys, $queri);
+//         if ($result->num_rows > 0) {
+//         echo "<table><tr><th>Points</th><th>Firstname</th><th>Lastname</th></tr>";
+//         while($row = $result->fetch_assoc()) {
+//             echo "<tr><td>" . $row["points"]. "</td><td>" . $row["firstname"]. "</td><td>" . $row["lastname"]. "</td></tr>";
+//         }
+//         echo "</table>";
+//         echo "<script>";
+//         echo "var out3 = document.querySelector('.results-screen p');";
+//         echo "out3.innerHTML = '" . $output . "';";
+//         echo "</script>";
+//         }
+// }
+?>  
+    <script>
+        var user_a = <?php echo json_encode($user_a); ?>;
+    </script>  
     <script src="../scripts/multit.js"></script>
-    
+
 </body>
 </html>
